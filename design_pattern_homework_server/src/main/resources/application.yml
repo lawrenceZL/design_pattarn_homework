@@ -1,0 +1,36 @@
+spring:
+  datasource:
+    url: jdbc:mysql://47.106.219.116:3306/design_pattern_homework?characterEncoding=utf8&useSSL=true
+    username: design_pattern_user
+    password: design_pattern_password
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    tomcat:
+      max-wait: 1000
+      max-idle: 10
+      min-idle: 5
+      initial-size: 5
+    type: com.alibaba.druid.pool.DruidDataSource
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    show-sql: true
+    hibernate:
+      # 自动建表
+      ddl-auto: update
+
+server:
+  port: 10001
+  tomcat:
+    uri-encoding: UTF-8
+  location: 127.0.0.1
+  servlet:
+    session:
+      timeout: 600
+    context-path: /
+
+# logging config
+logging:
+  config: classpath:logback.xml
+
+lombok:
+  equalsAndHashCode:
+    callSuper: call

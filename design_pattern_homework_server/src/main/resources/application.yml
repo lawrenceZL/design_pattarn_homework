@@ -16,6 +16,11 @@ spring:
     hibernate:
       # 自动建表
       ddl-auto: update
+  http:
+    encoding:
+      charset: utf-8
+      enabled: true
+      force: true
 
 server:
   port: 10001

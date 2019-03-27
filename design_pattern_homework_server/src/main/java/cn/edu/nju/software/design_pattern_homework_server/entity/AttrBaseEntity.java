@@ -33,7 +33,7 @@ public abstract class AttrBaseEntity {
     private Double CRIT_S;
     //敏捷度
     @Column(name = "f_spd")
-    private Double f_spd;
+    private Double SPD;
 
 
 }

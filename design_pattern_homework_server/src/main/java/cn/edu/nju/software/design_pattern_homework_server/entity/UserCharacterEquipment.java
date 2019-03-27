@@ -3,7 +3,9 @@ package cn.edu.nju.software.design_pattern_homework_server.entity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
 @Data
 @Entity
@@ -16,5 +18,8 @@ public class UserCharacterEquipment extends Equipment implements UpgradeInterfac
 
     @Column(name = "f_upgrade_times")
     private Integer upgradeTimes;
+
+    @Column(name = "f_count")
+    private Integer count;
 
 }

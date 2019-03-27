@@ -21,4 +21,7 @@ public class UserCharacter extends Character {
     @Column(name = "f_user_character_weapon_id")
     private Long userCharacterWeaponId;
 
+    @Column(name = "nickname")
+    private String nickname;
+
 }

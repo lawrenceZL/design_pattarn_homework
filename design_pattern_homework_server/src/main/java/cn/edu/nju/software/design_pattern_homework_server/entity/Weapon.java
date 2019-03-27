@@ -21,4 +21,8 @@ public class Weapon extends AttrBaseEntity {
     private Double upgradeValueLimit;
     @Column(name = "f_upgrade_percent_limit")
     private Double upgradePercentLimit;
+
+    @Column(name = "f_character_id")
+    private Long characterId;
+
 }

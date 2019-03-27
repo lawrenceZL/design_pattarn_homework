@@ -3,14 +3,13 @@ package cn.edu.nju.software.design_pattern_homework_server.entity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Data
 @Entity
 @Table(name = "t_character")
 @EqualsAndHashCode(callSuper = true)
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class Character extends AttrBaseEntity {
     @Column(name = "f_name")
     private String name;

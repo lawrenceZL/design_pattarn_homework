@@ -12,5 +12,4 @@ public class CharacterDto extends AttrDto {
     private Double MAG;
     //初始等级(1级)
     private Integer level;
-
 }

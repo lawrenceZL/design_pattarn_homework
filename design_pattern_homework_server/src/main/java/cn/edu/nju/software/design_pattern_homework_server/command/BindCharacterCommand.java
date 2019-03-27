@@ -6,4 +6,5 @@ import lombok.Data;
 public class BindCharacterCommand {
     private Long userId;
     private Long characterId;
+    private String nickname;
 }

@@ -24,10 +24,11 @@ public class AccountServiceImpl implements AccountService {
     public Result register(RegisterCommand command) {
         boolean exist = userDao.existsByUsernameIsOrMailIsOrTelIs(command.getUsername(), command.getMail(), command.getTel());
         if (exist) {
-            User user = new User();
-            BeanUtils.copyProperties(command, user);
-            userDao.save(user);
+            return Result.error().withData("该用户注册信息重复！");
         }
+        User user = new User();
+        BeanUtils.copyProperties(command, user);
+        userDao.save(user);
         return Result.success().message("注册成功！");
     }
 

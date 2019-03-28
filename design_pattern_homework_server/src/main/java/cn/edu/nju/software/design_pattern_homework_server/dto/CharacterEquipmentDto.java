@@ -7,7 +7,7 @@ import lombok.Data;
 public class CharacterEquipmentDto extends EquipmentDto implements AttrComponent {
     private Long userCharacterId;
 
-    private Integer upgradeTimes;
+    //private Integer upgradeTimes;
 
     private Boolean equiped;
 

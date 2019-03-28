@@ -18,9 +18,6 @@ public class UserCharacterWeapon extends WeaponBaseEntity {
     @Column(name = "f_user_character_id")
     private Long userCharacterId;
 
-    @Column(name = "f_upgrade_times")
-    private Integer upgradeTimes;
-
     @Column(name = "f_weapon_id")
     private Long weaponId;
 

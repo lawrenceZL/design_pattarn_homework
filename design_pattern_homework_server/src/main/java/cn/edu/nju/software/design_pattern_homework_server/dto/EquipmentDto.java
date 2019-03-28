@@ -13,4 +13,5 @@ public class EquipmentDto extends AttrDto {
     private Double upgradeValueLimit;
     private Double upgradePercentLimit;
     private Long characterId;
+    private Integer upgradeTimes;
 }

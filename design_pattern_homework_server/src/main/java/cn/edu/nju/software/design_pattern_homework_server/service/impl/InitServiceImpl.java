@@ -8,7 +8,9 @@ import cn.edu.nju.software.design_pattern_homework_server.dao.EquipmentRepositor
 import cn.edu.nju.software.design_pattern_homework_server.dao.SkillRepository;
 import cn.edu.nju.software.design_pattern_homework_server.dao.WeaponRepository;
 import cn.edu.nju.software.design_pattern_homework_server.entity.Character;
-import cn.edu.nju.software.design_pattern_homework_server.entity.*;
+import cn.edu.nju.software.design_pattern_homework_server.entity.Equipment;
+import cn.edu.nju.software.design_pattern_homework_server.entity.Skill;
+import cn.edu.nju.software.design_pattern_homework_server.entity.Weapon;
 import cn.edu.nju.software.design_pattern_homework_server.entity.base.AttrBaseEntity;
 import cn.edu.nju.software.design_pattern_homework_server.service.InitService;
 import com.google.common.collect.Lists;
@@ -59,6 +61,7 @@ public class InitServiceImpl implements InitService {
         weapon.setUpgradePercentLimit(percentLimit);
         weapon.setUpgradeValueLimit(valueLimit);
         weapon.setCharacterId(characterId);
+        weapon.setUpgradeTimes(0);
         return weapon;
     }
 
@@ -226,6 +229,7 @@ public class InitServiceImpl implements InitService {
         equipment.setUpgradeValueLimit(valueLimit);
         equipment.setCharacterId(characterId);
         equipment.setLevel(level);
+        equipment.setUpgradeTimes(0);
         return equipment;
     }
 

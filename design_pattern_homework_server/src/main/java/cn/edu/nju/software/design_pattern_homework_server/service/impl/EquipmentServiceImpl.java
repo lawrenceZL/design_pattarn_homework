@@ -1,5 +1,6 @@
 package cn.edu.nju.software.design_pattern_homework_server.service.impl;
 
+import cn.edu.nju.software.design_pattern_homework_server.command.UpgradeCommand;
 import cn.edu.nju.software.design_pattern_homework_server.common.enumeration.EQUIP_TYPE;
 import cn.edu.nju.software.design_pattern_homework_server.common.result.Result;
 import cn.edu.nju.software.design_pattern_homework_server.dao.EquipmentRepository;
@@ -70,6 +71,11 @@ public class EquipmentServiceImpl implements EquipmentService {
             return getEquipedEquips(userCharacterId);
         }
         return getAllEquips(userCharacterId);
+    }
+
+    @Override
+    public Result upgrade(UpgradeCommand command) {
+        return null;
     }
 
     private List<EquipmentDto> getEquipmentDtos(List<Equipment> equipments) {

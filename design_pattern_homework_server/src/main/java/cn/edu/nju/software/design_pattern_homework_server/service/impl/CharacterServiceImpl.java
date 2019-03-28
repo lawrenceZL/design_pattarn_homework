@@ -57,8 +57,7 @@ public class CharacterServiceImpl implements CharacterService {
         userCharacterWeapon = userCharacterWeaponDao.save(userCharacterWeapon);
         UserCharacter userCharacter = new UserCharacter();
         BeanUtils.copyProperties(character, userCharacter, "id");
-        userCharacter.setNickname(command.getNickname());
-        userCharacter.setUserId(command.getUserId());
+        BeanUtils.copyProperties(command, userCharacter);
         userCharacter.setCreateTime(date);
         userCharacter.setCurrentEXP(userCharacter.getEXP());
         userCharacter.setCurrentHP(userCharacter.getHP());
@@ -78,7 +77,7 @@ public class CharacterServiceImpl implements CharacterService {
             userCharacterSkill.setCreateTime(date);
             userCharacterSkill.setSkillId(skill.getId());
             userCharacterSkill.setUserCharacterId(userCharacter.getId());
-            userCharacterSkill.setUpgradeTimes(INIT_LEVEL);
+            //userCharacterSkill.setUpgradeTimes(INIT_LEVEL);
             userCharacterSkill.setSkillLevel(SKILL_LEVEL.NOT_LEARN);
             userCharacterSkills.add(userCharacterSkill);
         }

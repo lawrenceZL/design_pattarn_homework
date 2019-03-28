@@ -17,9 +17,6 @@ public class UserCharacterSkill extends SkillBaseEntity {
     @Column(name = "f_user_character_id")
     private Long userCharacterId;
 
-    @Column(name = "f_upgrade_times")
-    private Integer upgradeTimes;
-
     @Column(name = "f_skill_id")
     private Long skillId;
 

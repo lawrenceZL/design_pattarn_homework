@@ -11,8 +11,8 @@ public class BasicUpgradeContext {
 //        this.strategy = strategy;
 //    }
 
-    public Values<Double> execute(int level, double lastVal, double limit) {
-        return strategy.upgrade(level, lastVal, limit);
+    public Values<Double> execute(int level, double lastVal, double limit, boolean random) {
+        return strategy.upgrade(level, lastVal, limit, random);
     }
 
 }

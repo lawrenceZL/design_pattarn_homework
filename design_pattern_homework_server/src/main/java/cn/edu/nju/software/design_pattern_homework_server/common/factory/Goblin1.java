@@ -8,7 +8,5 @@ import lombok.NoArgsConstructor;
 
 @Data
 @EqualsAndHashCode(callSuper = true)
-@NoArgsConstructor
-@AllArgsConstructor
 public class Goblin1 extends GoblinCharacter {
 }

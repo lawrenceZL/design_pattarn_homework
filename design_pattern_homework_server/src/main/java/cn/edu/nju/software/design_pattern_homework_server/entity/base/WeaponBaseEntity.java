@@ -22,6 +22,6 @@ public class WeaponBaseEntity extends AttrBaseEntity {
     @Column(name = "f_character_id")
     private Long characterId;
 
-    @Column(name = "f_level")
-    private Integer level = 0;
+    @Column(name = "f_update_times")
+    private Integer upgradeTimes = 0;
 }

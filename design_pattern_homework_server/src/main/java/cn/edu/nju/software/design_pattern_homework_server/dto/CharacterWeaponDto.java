@@ -7,7 +7,7 @@ public class CharacterWeaponDto extends WeaponDto {
 
     private Long userCharacterId;
 
-    private Integer upgradeTimes;
+    //private Integer upgradeTimes;
 
     private Long weaponId;
 

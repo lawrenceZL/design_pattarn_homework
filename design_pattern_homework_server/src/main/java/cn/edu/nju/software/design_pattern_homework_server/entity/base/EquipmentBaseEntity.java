@@ -23,7 +23,8 @@ public class EquipmentBaseEntity extends AttrBaseEntity {
     private Double upgradeValueLimit;
     @Column(name = "f_upgrade_percent_limit")
     private Double upgradePercentLimit;
-
+    @Column(name = "f_upgrade_times")
+    private Integer upgradeTimes;
     @Column(name = "f_character_id")
     private Long characterId;
 

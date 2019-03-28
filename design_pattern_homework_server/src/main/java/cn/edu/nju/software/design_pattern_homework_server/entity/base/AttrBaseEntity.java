@@ -1,17 +1,15 @@
-package cn.edu.nju.software.design_pattern_homework_server.entity;
+package cn.edu.nju.software.design_pattern_homework_server.entity.base;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import javax.persistence.*;
 
+
 @Data
+@EqualsAndHashCode(callSuper = true)
 @MappedSuperclass
 public abstract class AttrBaseEntity extends BaseEntity {
-
-//    @Id
-//    @Column(name = "f_id")
-//    @GeneratedValue(strategy = GenerationType.AUTO)
-//    private Long id;
 
     //物理攻击
     @Column(name = "f_atn")

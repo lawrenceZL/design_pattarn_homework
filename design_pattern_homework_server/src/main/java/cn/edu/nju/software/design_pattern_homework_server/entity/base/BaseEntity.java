@@ -1,4 +1,4 @@
-package cn.edu.nju.software.design_pattern_homework_server.entity;
+package cn.edu.nju.software.design_pattern_homework_server.entity.base;
 
 import lombok.Data;
 

@@ -9,6 +9,7 @@ import cn.edu.nju.software.design_pattern_homework_server.dao.SkillRepository;
 import cn.edu.nju.software.design_pattern_homework_server.dao.WeaponRepository;
 import cn.edu.nju.software.design_pattern_homework_server.entity.Character;
 import cn.edu.nju.software.design_pattern_homework_server.entity.*;
+import cn.edu.nju.software.design_pattern_homework_server.entity.base.AttrBaseEntity;
 import cn.edu.nju.software.design_pattern_homework_server.service.InitService;
 import com.google.common.collect.Lists;
 import org.springframework.stereotype.Service;

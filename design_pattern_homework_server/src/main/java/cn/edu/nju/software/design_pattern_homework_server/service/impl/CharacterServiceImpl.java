@@ -60,6 +60,9 @@ public class CharacterServiceImpl implements CharacterService {
         userCharacter.setNickname(command.getNickname());
         userCharacter.setUserId(command.getUserId());
         userCharacter.setCreateTime(date);
+        userCharacter.setCurrentEXP(userCharacter.getEXP());
+        userCharacter.setCurrentHP(userCharacter.getHP());
+        userCharacter.setCurrentMAG(userCharacter.getMAG());
         userCharacter.setUserCharacterWeaponId(userCharacterWeapon.getId());
         //创建用户角色信息
         userCharacter = userCharacterDao.save(userCharacter);

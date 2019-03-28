@@ -1,5 +1,6 @@
 package cn.edu.nju.software.design_pattern_homework_server.entity;
 
+import cn.edu.nju.software.design_pattern_homework_server.entity.base.SkillBaseEntity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -11,8 +12,8 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "t_user_character_skill")
 @EqualsAndHashCode(callSuper = true)
-@org.hibernate.annotations.ForeignKey(name = "none")
-public class UserCharacterSkill extends Skill implements UpgradeInterface {
+//@org.hibernate.annotations.ForeignKey(name = "none")
+public class UserCharacterSkill extends SkillBaseEntity {
     @Column(name = "f_user_character_id")
     private Long userCharacterId;
 

@@ -1,6 +1,7 @@
 package cn.edu.nju.software.design_pattern_homework_server.entity;
 
 import cn.edu.nju.software.design_pattern_homework_server.common.enumeration.SEX;
+import cn.edu.nju.software.design_pattern_homework_server.entity.base.BaseEntity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 

@@ -10,15 +10,10 @@ public class UserCharacterDto extends CharacterDto implements AttrComponent {
     private Long userId;
     private Long characterId;
     private String nickname;
-    //经验上限
-    private Double EXP;
-    //生命上限
-    private Double HP;
-    //魔力上限
-    private Double MAG;
-    //初始等级(1级)
     private Integer level;
-
+    private Double currentEXP;
+    private Double currentMAG;
+    private Double currentHP;
 
     @Override
     public AttrDto totalAttributes() {

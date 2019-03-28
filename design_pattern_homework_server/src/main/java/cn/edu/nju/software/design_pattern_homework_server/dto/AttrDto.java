@@ -4,7 +4,7 @@ import com.alibaba.fastjson.annotation.JSONField;
 import lombok.Data;
 
 @Data
-public class AttrDto {
+public class AttrDto extends BaseDto{
     private Long id;
     //物理攻击
     @JSONField(name = "ATN")

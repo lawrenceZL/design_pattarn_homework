@@ -15,6 +15,7 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -44,6 +45,7 @@ public class CharacterServiceImpl implements CharacterService {
 
     @Override
     public Result bindCharacter(BindCharacterCommand command) {
+        Date date = new Date();
         Character character = characterDao.findFirstById(command.getCharacterId());
         Weapon weapon = weaponDao.findByCharacterId(command.getCharacterId());
         UserCharacterWeapon userCharacterWeapon = new UserCharacterWeapon();
@@ -51,11 +53,13 @@ public class CharacterServiceImpl implements CharacterService {
         BeanUtils.copyProperties(weapon, userCharacterWeapon, "id");
         userCharacterWeapon.setWeaponId(weapon.getId());
         userCharacterWeapon.setUpgradeTimes(INIT_LEVEL);
+        userCharacterWeapon.setCreateTime(date);
         userCharacterWeapon = userCharacterWeaponDao.save(userCharacterWeapon);
         UserCharacter userCharacter = new UserCharacter();
         BeanUtils.copyProperties(character, userCharacter, "id");
         userCharacter.setNickname(command.getNickname());
         userCharacter.setUserId(command.getUserId());
+        userCharacter.setCreateTime(date);
         userCharacter.setUserCharacterWeaponId(userCharacterWeapon.getId());
         //创建用户角色信息
         userCharacter = userCharacterDao.save(userCharacter);
@@ -68,6 +72,7 @@ public class CharacterServiceImpl implements CharacterService {
         for (Skill skill : skills) {
             UserCharacterSkill userCharacterSkill = new UserCharacterSkill();
             BeanUtils.copyProperties(skill, userCharacterSkill, "id");
+            userCharacterSkill.setCreateTime(date);
             userCharacterSkill.setSkillId(skill.getId());
             userCharacterSkill.setUserCharacterId(userCharacter.getId());
             userCharacterSkill.setUpgradeTimes(INIT_LEVEL);

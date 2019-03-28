@@ -160,8 +160,9 @@ public class InitServiceImpl implements InitService {
         hero3.setLevel(1);
         initAttr(hero3, 90., 90., 45., 45., 8., 50., 20.);
         characterDao.save(hero1);
-        characterDao.save(hero3);
         characterDao.save(hero2);
+        characterDao.save(hero3);
+
     }
 
     @Override

@@ -6,12 +6,12 @@ import javax.persistence.*;
 
 @Data
 @MappedSuperclass
-public abstract class AttrBaseEntity {
+public abstract class AttrBaseEntity extends BaseEntity {
 
-    @Id
-    @Column(name = "f_id")
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+//    @Id
+//    @Column(name = "f_id")
+//    @GeneratedValue(strategy = GenerationType.AUTO)
+//    private Long id;
 
     //物理攻击
     @Column(name = "f_atn")

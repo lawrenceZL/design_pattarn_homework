@@ -49,6 +49,7 @@ public class CharacterServiceImpl implements CharacterService {
         UserCharacterWeapon userCharacterWeapon = new UserCharacterWeapon();
         //存储用户角色的weapon信息，初始化
         BeanUtils.copyProperties(weapon, userCharacterWeapon, "id");
+        userCharacterWeapon.setWeaponId(weapon.getId());
         userCharacterWeapon.setUpgradeTimes(INIT_LEVEL);
         userCharacterWeapon = userCharacterWeaponDao.save(userCharacterWeapon);
         UserCharacter userCharacter = new UserCharacter();
@@ -67,6 +68,7 @@ public class CharacterServiceImpl implements CharacterService {
         for (Skill skill : skills) {
             UserCharacterSkill userCharacterSkill = new UserCharacterSkill();
             BeanUtils.copyProperties(skill, userCharacterSkill, "id");
+            userCharacterSkill.setSkillId(skill.getId());
             userCharacterSkill.setUserCharacterId(userCharacter.getId());
             userCharacterSkill.setUpgradeTimes(INIT_LEVEL);
             userCharacterSkill.setSkillLevel(SKILL_LEVEL.NOT_LEARN);

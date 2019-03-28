@@ -10,6 +10,8 @@ public class CharacterSkillDto extends SkillDto implements AttrComponent {
 
     private Integer upgradeTimes;
 
+    private Long skillId;
+
     @Override
     public AttrDto totalAttributes() {
         return null;

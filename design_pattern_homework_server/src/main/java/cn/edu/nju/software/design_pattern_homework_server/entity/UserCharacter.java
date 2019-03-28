@@ -3,14 +3,13 @@ package cn.edu.nju.software.design_pattern_homework_server.entity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Data
 @Entity
 @Table(name = "t_user_character")
 @EqualsAndHashCode(callSuper = true)
+@org.hibernate.annotations.ForeignKey(name = "none")
 public class UserCharacter extends Character {
     @Column(name = "f_user_id")
     private Long userId;

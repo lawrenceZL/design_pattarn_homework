@@ -4,4 +4,5 @@ import cn.edu.nju.software.design_pattern_homework_server.entity.UserCharacterWe
 import org.springframework.data.repository.CrudRepository;
 
 public interface UserCharacterWeaponRepository extends CrudRepository<UserCharacterWeapon, Long> {
+    UserCharacterWeapon findByUserCharacterId(Long userCharacterId);
 }

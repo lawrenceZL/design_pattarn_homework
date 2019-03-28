@@ -10,5 +10,7 @@ public interface CharacterService {
 
     Result getUserCharacters(Long userId);
 
-    Result getDetail();
+    Result getDetail(Long userCharacterId);
+
+    Result getCharacterWeapon(Long userCharacterId);
 }

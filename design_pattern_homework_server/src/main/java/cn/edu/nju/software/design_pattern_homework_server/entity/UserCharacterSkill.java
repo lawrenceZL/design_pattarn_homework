@@ -9,6 +9,7 @@ import javax.persistence.*;
 @Entity
 @Table(name = "t_user_character_skill")
 @EqualsAndHashCode(callSuper = true)
+@org.hibernate.annotations.ForeignKey(name = "none")
 public class UserCharacterSkill extends Skill implements UpgradeInterface{
     @Column(name = "f_user_character_id")
     private Long userCharacterId;

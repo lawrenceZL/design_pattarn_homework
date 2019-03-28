@@ -28,4 +28,21 @@ public class Character extends AttrBaseEntity {
     @Column(name = "f_level")
     private Integer level;
 
+    @Column(name = "f_weapon_cuopon")
+    private Integer weaponCoupon;
+
+    @Column(name = "f_equipment_coupon")
+    private Integer equipmentCoupon;
+
+    @Column(name = "f_skill_coupon")
+    private Integer skillCoupon;
+
+    @Column(name = "f_current_exp")
+    private Double currentEXP;
+
+    @Column(name = "f_current_mag")
+    private Double currentMAG;
+
+    @Column(name = "f_current_hp")
+    private Double currentHP;
 }

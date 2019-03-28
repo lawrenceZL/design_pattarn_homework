@@ -9,8 +9,8 @@ import javax.persistence.*;
 @Data
 @Entity
 @Table(name = "t_user_character_weapon")
-
 @EqualsAndHashCode(callSuper = true)
+@org.hibernate.annotations.ForeignKey(name = "none")
 public class UserCharacterWeapon extends Weapon implements UpgradeInterface {
     @Column(name = "f_user_character_id")
     private Long userCharacterId;

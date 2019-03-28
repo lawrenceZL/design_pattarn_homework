@@ -10,7 +10,7 @@ import java.util.Date;
 public class BaseEntity {
     @Id
     @Column(name = "f_id")
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(name = "f_create_time")
     private Date createTime;

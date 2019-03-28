@@ -10,7 +10,7 @@ import javax.persistence.MappedSuperclass;
 @Data
 @EqualsAndHashCode(callSuper = true)
 @MappedSuperclass
-public class WeaponBaseEntity extends AttrBaseEntity{
+public class WeaponBaseEntity extends AttrBaseEntity {
 
     @Column(name = "f_name")
     private String name;
@@ -21,4 +21,7 @@ public class WeaponBaseEntity extends AttrBaseEntity{
 
     @Column(name = "f_character_id")
     private Long characterId;
+
+    @Column(name = "f_level")
+    private Integer level = 0;
 }

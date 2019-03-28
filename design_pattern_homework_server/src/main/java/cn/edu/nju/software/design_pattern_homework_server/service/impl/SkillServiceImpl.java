@@ -1,5 +1,6 @@
 package cn.edu.nju.software.design_pattern_homework_server.service.impl;
 
+import cn.edu.nju.software.design_pattern_homework_server.command.UpgradeCommand;
 import cn.edu.nju.software.design_pattern_homework_server.common.result.Result;
 import cn.edu.nju.software.design_pattern_homework_server.dao.UserCharacterSkillRepository;
 import cn.edu.nju.software.design_pattern_homework_server.dto.CharacterSkillDto;
@@ -28,6 +29,11 @@ public class SkillServiceImpl implements SkillService {
             return skillDto;
         }).collect(Collectors.toList());
         return Result.success().message("获取当前角色的技能信息成功！").withData(skills);
+    }
+
+    @Override
+    public Result upgrade(UpgradeCommand command) {
+        return null;
     }
 
 }

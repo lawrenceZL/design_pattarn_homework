@@ -29,6 +29,7 @@ public class EquipmentController {
 
     @PostMapping("upgrade")
     public Result upgrade(@RequestBody UpgradeCommand command){
-        return null;
+        //TODO
+        return equipmentService.upgrade(command);
     }
 }

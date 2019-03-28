@@ -2,7 +2,7 @@ package cn.edu.nju.software.design_pattern_homework_server.controller;
 
 import cn.edu.nju.software.design_pattern_homework_server.command.BindCharacterCommand;
 import cn.edu.nju.software.design_pattern_homework_server.common.result.Result;
-import cn.edu.nju.software.design_pattern_homework_server.common.strategy.level.UpgradeStrategy;
+import cn.edu.nju.software.design_pattern_homework_server.entity.Character;
 import cn.edu.nju.software.design_pattern_homework_server.service.CharacterService;
 import org.springframework.web.bind.annotation.*;
 
@@ -37,7 +37,8 @@ public class CharacterController {
     }
 
     @PostMapping("upgrade")
-    public Result upgrade(@RequestBody UpgradeStrategy command) {
-        return null;
+    public Result upgrade(@RequestBody Character command) {
+        //TODO
+        return characterService.upgrade(command);
     }
 }

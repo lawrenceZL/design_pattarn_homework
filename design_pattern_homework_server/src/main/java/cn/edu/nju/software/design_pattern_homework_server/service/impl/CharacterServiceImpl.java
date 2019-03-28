@@ -144,5 +144,10 @@ public class CharacterServiceImpl implements CharacterService {
         return Result.success().withData(dto);
     }
 
+    @Override
+    public Result upgrade(Character command) {
+        return null;
+    }
+
 
 }

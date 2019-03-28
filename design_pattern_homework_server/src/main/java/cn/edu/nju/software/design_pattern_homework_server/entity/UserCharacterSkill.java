@@ -22,4 +22,6 @@ public class UserCharacterSkill extends SkillBaseEntity {
 
     @Column(name = "f_skill_id")
     private Long skillId;
+
+
 }

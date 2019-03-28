@@ -19,5 +19,10 @@ public class SkillBaseEntity extends AttrBaseEntity {
     private Long characterId;
 
     @Column(name = "f_skill_level")
-    private SKILL_LEVEL skillLevel;
+    private SKILL_LEVEL skillLevel=SKILL_LEVEL.NOT_LEARN;
+
+    @Column(name = "f_upgrade_value_limit")
+    private Double upgradeValueLimit;
+    @Column(name = "f_upgrade_percent_limit")
+    private Double upgradePercentLimit;
 }

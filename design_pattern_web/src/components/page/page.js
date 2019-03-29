@@ -11,8 +11,8 @@ const Page = () => (
         <Route exact path="/" render={() => (<LoginForm/>)}/>
         <Route exact path="/login" render={() => (<LoginForm/>)}/>
         <Route exact path="/register" render={()=>(<Register/>)}/>
-        <Route exact path="/content" render={()=>(<Content/>)}/>
-        <Route exact path='/loader' render={()=>(<Loader/>)}/>
+        <Route path='/content/:userCharacterId' component={Content}></Route>
+        <Route path='/loader/:userId' component={Loader}></Route>
     </div>
 )
 

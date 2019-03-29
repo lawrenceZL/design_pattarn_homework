@@ -16,11 +16,6 @@ public class EquipmentController {
     @Resource
     private EquipmentService equipmentService;
 
-    @GetMapping("max")
-    public Result getMaxId() {
-        return equipmentService.getMaxEquipId();
-    }
-
 
     //true当前角色已经装备的装备 map
     //false当前角色的装备库 list

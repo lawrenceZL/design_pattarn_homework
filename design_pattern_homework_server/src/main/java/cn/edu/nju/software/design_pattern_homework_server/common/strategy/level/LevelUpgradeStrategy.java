@@ -5,7 +5,7 @@ import cn.edu.nju.software.design_pattern_homework_server.common.strategy.Values
 /**
  * 策略模式和模版模式
  */
-public interface UpgradeStrategy {
+public interface LevelUpgradeStrategy {
 
     int cal_needs(int level);
 

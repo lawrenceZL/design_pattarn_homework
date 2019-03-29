@@ -6,7 +6,7 @@ import lombok.Data;
 
 @Data
 @AllArgsConstructor
-public class EquipmentUpgradeStrategy implements UpgradeStrategy {
+public class EquipmentUpgradeStrategy implements LevelUpgradeStrategy {
 
     private EQUIP_TYPE type;
 

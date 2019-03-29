@@ -5,7 +5,7 @@ import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
 public class LevelUpgradeContext {
-    private UpgradeStrategy strategy;
+    private LevelUpgradeStrategy strategy;
 
     public Values<Integer> execute(int level, int current) {
         return strategy.upgrade(level, current);

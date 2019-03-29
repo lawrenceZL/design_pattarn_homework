@@ -3,7 +3,8 @@ package cn.edu.nju.software.design_pattern_homework_server.entity.base;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.MappedSuperclass;
 
 
 @Data
@@ -32,6 +33,11 @@ public abstract class AttrBaseEntity extends BaseEntity {
     //敏捷度
     @Column(name = "f_spd")
     private Double SPD;
+
+    @Column(name = "f_upgrade_value_limit")
+    private Double upgradeValueLimit;
+    @Column(name = "f_upgrade_percent_limit")
+    private Double upgradePercentLimit;
 
 
 }

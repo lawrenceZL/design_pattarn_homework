@@ -21,7 +21,6 @@ public class SkillController {
 
     @PostMapping("upgrade")
     public Result upgrade(@RequestBody UpgradeCommand command) {
-        //TODO
         return skillService.upgrade(command);
     }
 }

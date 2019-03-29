@@ -1,5 +1,8 @@
 package cn.edu.nju.software.design_pattern_homework_server.controller;
 
+import cn.edu.nju.software.design_pattern_homework_server.command.ChangeEquipedCommand;
+import cn.edu.nju.software.design_pattern_homework_server.command.EquipCommand;
+import cn.edu.nju.software.design_pattern_homework_server.command.PickUpCommand;
 import cn.edu.nju.software.design_pattern_homework_server.command.UpgradeCommand;
 import cn.edu.nju.software.design_pattern_homework_server.common.result.Result;
 import cn.edu.nju.software.design_pattern_homework_server.service.EquipmentService;
@@ -29,7 +32,21 @@ public class EquipmentController {
 
     @PostMapping("upgrade")
     public Result upgrade(@RequestBody UpgradeCommand command){
-        //TODO
         return equipmentService.upgrade(command);
+    }
+
+    @PostMapping("pick")
+    public Result pickUpEquip(@RequestBody PickUpCommand command){
+        return equipmentService.pickUpEquip(command.getEquipments(),command.getUserCharacterId());
+    }
+
+    @PostMapping("change")
+    public Result equipedEquip(@RequestBody ChangeEquipedCommand command){
+        return equipmentService.changeEquipedEquip(command);
+    }
+
+    @DeleteMapping("/{id}")
+    public Result delete(@PathVariable("id")Long id){
+        return equipmentService.delete(id);
     }
 }

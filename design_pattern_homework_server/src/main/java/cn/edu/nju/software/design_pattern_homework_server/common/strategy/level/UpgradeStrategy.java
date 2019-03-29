@@ -9,7 +9,14 @@ public interface UpgradeStrategy {
 
     int cal_needs(int level);
 
+    default boolean isUpperLevel(int level) {
+        return false;
+    }
+
     default Values<Integer> upgrade(int level, int current) {
+        if (isUpperLevel(level)) {
+            return new Values<>(level, current);
+        }
         int need = cal_needs(level);
         if (current >= need) {
             current -= need;

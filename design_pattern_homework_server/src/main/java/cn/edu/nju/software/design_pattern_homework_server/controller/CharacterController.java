@@ -1,6 +1,8 @@
 package cn.edu.nju.software.design_pattern_homework_server.controller;
 
 import cn.edu.nju.software.design_pattern_homework_server.command.BindCharacterCommand;
+import cn.edu.nju.software.design_pattern_homework_server.command.CharacterCommand;
+import cn.edu.nju.software.design_pattern_homework_server.command.PickUpCommand;
 import cn.edu.nju.software.design_pattern_homework_server.common.result.Result;
 import cn.edu.nju.software.design_pattern_homework_server.entity.Character;
 import cn.edu.nju.software.design_pattern_homework_server.service.CharacterService;
@@ -37,8 +39,28 @@ public class CharacterController {
     }
 
     @PostMapping("upgrade")
-    public Result upgrade(@RequestBody Character command) {
-        //TODO
+    public Result upgrade(@RequestBody CharacterCommand command) {
         return characterService.upgrade(command);
+    }
+
+    @PostMapping("update")
+    public Result update(@RequestBody CharacterCommand command){
+        return characterService.update(command);
+
+    }
+
+    @PostMapping("pick")
+    public Result pickUpThings(@RequestBody PickUpCommand command){
+        return characterService.pickUpThings(command);
+    }
+
+    @PostMapping("drop")
+    public Result dropOutThings(){
+        return characterService.dropOutThings();
+    }
+
+    @GetMapping("goblin/{userCharacterId}")
+    public Result generateGoblins(@PathVariable("userCharacterId")Long userCharacterId){
+        return characterService.genGoblins(userCharacterId);
     }
 }

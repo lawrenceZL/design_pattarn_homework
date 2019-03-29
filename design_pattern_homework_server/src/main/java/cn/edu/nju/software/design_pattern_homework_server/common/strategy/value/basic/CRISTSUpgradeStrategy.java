@@ -9,8 +9,12 @@ public class CRISTSUpgradeStrategy implements BasicUpgradeStrategy {
     @Resource
     private RandomUtil randomUtil;
     @Override
-    public Values<Double> upgrade(int level, double lastVal, double limit,boolean random) {
-        double current = randomUtil.randomRange(lastVal, lastVal + limit);
-        return new Values<>(limit, current);
+    public Values<Double> upgrade(int level, double lastVal, double limit, boolean random) {
+        if (random) {
+            double current = randomUtil.randomRange(lastVal, lastVal + limit);
+            return new Values<>(limit, current);
+        } else {
+            return new Values<>(limit, lastVal + limit);
+        }
     }
 }

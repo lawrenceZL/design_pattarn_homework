@@ -10,11 +10,15 @@ public class CRISTUpgradeStrategy implements BasicUpgradeStrategy {
     private RandomUtil randomUtil;
 
     @Override
-    public Values<Double> upgrade(int level, double lastVal, double limit,boolean random) {
-        double current = randomUtil.randomRange(lastVal, lastVal + limit);
-        if (current >= 1.0) {
-            current = 1.0;
+    public Values<Double> upgrade(int level, double lastVal, double limit, boolean random) {
+        if (random) {
+            double current = randomUtil.randomRange(lastVal, lastVal + limit);
+            if (current >= 100.) {
+                current = 100.0;
+            }
+            return new Values<>(limit, current);
+        } else {
+            return new Values<>(limit, lastVal + limit);
         }
-        return new Values<>(limit, current);
     }
 }

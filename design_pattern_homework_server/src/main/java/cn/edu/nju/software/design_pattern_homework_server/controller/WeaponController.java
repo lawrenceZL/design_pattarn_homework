@@ -24,7 +24,6 @@ public class WeaponController {
 
     @PostMapping("upgrade")
     public Result upgrade(@RequestBody UpgradeCommand command) {
-        // TODO
         return weaponService.upgrade(command);
     }
 }

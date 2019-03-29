@@ -25,4 +25,6 @@ public interface CharacterService {
     Result dropOutThings();
 
     Result genGoblins(Long userCharacterId);
+
+    Result getInfo(Long userCharacterId);
 }

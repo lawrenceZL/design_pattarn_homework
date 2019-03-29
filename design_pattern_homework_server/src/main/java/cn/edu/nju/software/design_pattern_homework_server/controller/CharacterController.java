@@ -21,6 +21,10 @@ public class CharacterController {
         return characterService.bindCharacter(command);
     }
 
+    @GetMapping("info/{userCharacterId}")
+    public Result info(@PathVariable("userCharacterId") Long userCharacterId) {
+        return characterService.getInfo(userCharacterId);
+    }
     @GetMapping("list")
     //用于用户进行新建游戏的角色选择
     public Result list() {

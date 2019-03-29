@@ -267,5 +267,17 @@ public class CharacterServiceImpl implements CharacterService {
         return Result.error().message("获取用户角色信息失败！");
     }
 
+    @Override
+    public Result getInfo(Long userCharacterId) {
+        Optional<UserCharacter> op_character = userCharacterDao.findById(userCharacterId);
+        if (op_character.isPresent()) {
+            UserCharacter character = op_character.get();
+            UserCharacterDto dto = new UserCharacterDto();
+            BeanUtils.copyProperties(character, dto);
+            return Result.success().message("获取用户信息成功！").withData(dto);
+        }
+        return Result.error().message("获取用户信息失败！");
+    }
+
 
 }

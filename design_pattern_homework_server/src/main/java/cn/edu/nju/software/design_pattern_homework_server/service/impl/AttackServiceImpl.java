@@ -2,6 +2,7 @@ package cn.edu.nju.software.design_pattern_homework_server.service.impl;
 
 import cn.edu.nju.software.design_pattern_homework_server.command.AttackCommand;
 import cn.edu.nju.software.design_pattern_homework_server.common.enumeration.EQUIP_TYPE;
+import cn.edu.nju.software.design_pattern_homework_server.common.factory.product.CommonGoblin;
 import cn.edu.nju.software.design_pattern_homework_server.common.factory.product.GoblinCharacter;
 import cn.edu.nju.software.design_pattern_homework_server.common.result.Result;
 import cn.edu.nju.software.design_pattern_homework_server.common.strategy.attack.AttackContext;
@@ -38,7 +39,7 @@ public class AttackServiceImpl implements AttackService {
 
     @Override
     public Result attack(AttackCommand command) {
-        GoblinCharacter goblin = command.getGoblin();
+        CommonGoblin goblin = command.getGoblin();
         AttrInterface goblin_attrs = new CharacterAttrCommand();
         BeanUtils.copyProperties(goblin, goblin_attrs);
 

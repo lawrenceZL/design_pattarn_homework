@@ -237,13 +237,13 @@ public class CharacterServiceImpl implements CharacterService {
     public Result dropOutThings() {
         List<EquipmentDto> dtos = Lists.newArrayList();
         int max_coupon = 5;
-        int max_equips = 1;
+        int max_equips = 2;
         long max = equipmentService.getMaxEquipId();
         long min = equipmentService.getMinEquipId();
         int weapon_coupon = randomUtil.randomRange(max_coupon);
         int equipment_coupon = randomUtil.randomRange(max_coupon);
         long id = randomUtil.random(min, max);
-        if (randomUtil.random(0, max_equips) == 1) {
+        if (randomUtil.random(0, max_equips) >= 1) {
             Optional<Equipment> op_equip = equipmentDao.findById(id);
             if (op_equip.isPresent()) {
                 EquipmentDto dto = new EquipmentDto();

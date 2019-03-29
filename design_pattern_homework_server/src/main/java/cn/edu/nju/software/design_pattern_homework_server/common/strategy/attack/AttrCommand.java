@@ -1,4 +1,4 @@
-package cn.edu.nju.software.design_pattern_homework_server.common.strategy.attack.decorater;
+package cn.edu.nju.software.design_pattern_homework_server.common.strategy.attack;
 
 
 import lombok.AllArgsConstructor;

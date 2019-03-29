@@ -29,4 +29,8 @@ public class RandomUtil {
         long random_long = lower + (((long) (new Random().nextDouble() * (upper - lower))));
         return random_long;
     }
+
+    public double random() {
+        return random.nextDouble();
+    }
 }

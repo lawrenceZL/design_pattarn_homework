@@ -33,7 +33,7 @@ public class GoblinContext {
         for (GoblinFactory factory : factories) {
             int size = randomUtil.randomRange(0, MAX_SIZE_PER_TYPE);
             for (int i = 0; i < size; i++) {
-                characters.add(factory.generateGoblin());
+                characters.add(factory.generateGoblin(attrs));
             }
         }
         return characters;

@@ -94,7 +94,87 @@ function attack(flag,goblin,userCharacterId,skillId,type) {
     })
 }
 
+function upgrade_character(id,EXP,HP,MAG,level,currentEXP,currentMAG,currentHP) {
+    let u_c_url=url+"/character/upgrade";
+    let json={};
+    json['id']=id;
+    json['EXP']=EXP;
+    json['HP']=HP;
+    json['MAG']=MAG;
+    json['level']=level;
+    json['currentEXP']=currentEXP;
+    json['currentMAG']=currentMAG;
+    json['currentHP']=currentHP;
+    return axios.post(u_c_url,json).then(response=>{
+        return response.data;
+    }).catch({
+        responseCode: 'RESPONSE_ERROR', description: 'Fail to process the request'
+    })
+}
+
+function change_equipment(packId,unpackId) {
+    let e_list_url=url+"/equip/change";
+    let json={};
+    json['packId']=packId;
+    json['unpackId']=unpackId;
+    return axios.post(e_list_url,json).then(response=>{
+        return response.data;
+    }).catch({
+        responseCode: 'RESPONSE_ERROR', description: 'Fail to process the request'
+    })
+}
+
+function delete_equipment(id) {
+    let d_e_url=url+"/equip/delete/"+id;
+    return axios.get(d_e_url).then(response=>{
+        return response.data;
+    }).catch({
+        responseCode: 'RESPONSE_ERROR', description: 'Fail to process the request'
+    })
+}
+
+function upgrade_equipment(id,userCharacterId,currentLevel) {
+    let u_url=url+"/equip/upgrade";
+    let json={};
+    json['id']=id;
+    json['userCharacterId']=userCharacterId;
+    json['currentLevel']=currentLevel;
+    return axios.post(u_url,json).then(response=>{
+        return response.data;
+    }).catch({
+        responseCode: 'RESPONSE_ERROR', description: 'Fail to process the request'
+    })
+}
+
+function upgrade_weapon(id,userCharacterId,currentLevel) {
+    let u_url=url+"/weapon/upgrade";
+    let json={};
+    json['id']=id;
+    json['userCharacterId']=userCharacterId;
+    json['currentLevel']=currentLevel;
+    return axios.post(u_url,json).then(response=>{
+        return response.data;
+    }).catch({
+        responseCode: 'RESPONSE_ERROR', description: 'Fail to process the request'
+    })
+}
+
+function upgrade_skill(id,userCharacterId,currentLevel) {
+    let u_url=url+"/skill/upgrade";
+    let json={};
+    json['id']=id;
+    json['userCharacterId']=userCharacterId;
+    json['currentLevel']=currentLevel;
+    return axios.post(u_url,json).then(response=>{
+        return response.data;
+    }).catch({
+        responseCode: 'RESPONSE_ERROR', description: 'Fail to process the request'
+    })
+}
+
 export const character_service={
     obtain_skill,obtain_weapon,obtain_character_detail,obtain_character_info,
-    obtain_equip,things_drop,attack,create_monster,things_pick
+    obtain_equip,things_drop,attack,create_monster,things_pick,upgrade_character,
+    change_equipment,delete_equipment,upgrade_equipment,upgrade_weapon,
+    upgrade_skill
 }

@@ -139,6 +139,8 @@ public class InitServiceImpl implements InitService {
         hero1.setMAG(100.0);
         hero1.setHP(200.0);
         hero1.setLevel(1);
+        hero1.setUpgradeValueLimit(100.0);
+        hero1.setUpgradePercentLimit(3.0);
         //物理攻击
         //魔法攻击
         //物理防御
@@ -154,6 +156,8 @@ public class InitServiceImpl implements InitService {
         hero2.setMAG(200.0);
         hero2.setHP(100.0);
         hero2.setLevel(1);
+        hero2.setUpgradeValueLimit(100.0);
+        hero2.setUpgradePercentLimit(3.0);
         initAttr(hero2, 80.0, 100., 40., 50., 10., 50., 15.);
         Character hero3 = new Character();
         hero3.setName("盗贼");
@@ -162,11 +166,12 @@ public class InitServiceImpl implements InitService {
         hero3.setMAG(150.0);
         hero3.setHP(150.0);
         hero3.setLevel(1);
+        hero3.setUpgradeValueLimit(100.0);
+        hero3.setUpgradePercentLimit(3.0);
         initAttr(hero3, 90., 90., 45., 45., 8., 50., 20.);
         characterDao.save(hero1);
         characterDao.save(hero2);
         characterDao.save(hero3);
-
     }
 
     @Override

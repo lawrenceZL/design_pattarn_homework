@@ -104,7 +104,7 @@ public class EquipmentServiceImpl implements EquipmentService {
         for (EquipCommand command : equipments) {
             Optional<Equipment> equipment = equipmentDao.findById(command.getId());
             UserCharacterEquipment equip = new UserCharacterEquipment();
-            BeanUtils.copyProperties(equipment, equip, "id");
+            BeanUtils.copyProperties(equipment.get(), equip, "id");
             equip.setUpgradeTimes(0);
             equip.setCount(1);
             equip.setEquiped(false);

@@ -18,9 +18,9 @@ public class Goblin1 extends GoblinCharacter {
         this.setATN(attrs.getATN() * times / 2);
         this.setCRIT(attrs.getCRIT() * times / 2);
         this.setCRIT_S(attrs.getCRIT_S() * times / 2);
-        this.setDEF(attrs.getDEF() * times / 2);
-        this.setINT(attrs.getINT() * times / 2);
-        this.setRES(attrs.getRES() * times / 2);
-        this.setSPD(attrs.getSPD() * times / 2);
+        this.setDEF(attrs.getDEF()/times);
+        this.setINT(attrs.getINT()/times);
+        this.setRES(attrs.getRES()/times);
+        this.setSPD(attrs.getSPD()/times);
     }
 }

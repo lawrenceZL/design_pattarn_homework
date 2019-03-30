@@ -5,6 +5,7 @@ import cn.edu.nju.software.design_pattern_homework_server.entity.UserCharacterEq
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 
@@ -13,9 +14,9 @@ public interface UserCharacterEquipmentRepository extends CrudRepository<UserCha
 
     @Modifying
     @Query("update #{#entityName} t set t.equiped = :equiped  where t.id = :id")
-    void updateEquipedState(Long id, boolean equiped);
+    void updateEquipedState(@Param("id") Long id, @Param("equiped") Boolean equiped);
 
     @Modifying
     @Query("update #{#entityName} t set t.equiped = :equiped  where t.userCharacterId = :userCharacterId and t.type= :type")
-    void updateEquipedStateByType(Long userCharacterId, EQUIP_TYPE type, boolean equiped);
+    void updateEquipedStateByType(@Param("userCharacterId") Long userCharacterId, @Param("type") EQUIP_TYPE type, @Param("equiped") Boolean equiped);
 }

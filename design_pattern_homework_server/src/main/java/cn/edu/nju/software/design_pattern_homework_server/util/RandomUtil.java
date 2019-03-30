@@ -9,7 +9,7 @@ import java.util.Random;
 public class RandomUtil {
     private static Random random = new Random();
 
-    public synchronized double randomRange(double lower, double upper) {
+    public static synchronized double randomRange(double lower, double upper) {
         return random.nextDouble() * (upper - lower) + lower;
     }
 

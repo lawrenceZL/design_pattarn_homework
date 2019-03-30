@@ -82,7 +82,7 @@ public class EquipmentServiceImpl implements EquipmentService {
         if (equiped) {
             return getEquipedEquips(userCharacterId);
         }
-        return getAllEquips(userCharacterId);
+        return getCharacterEquips(userCharacterId);
     }
 
     @Override
